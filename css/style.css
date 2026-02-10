@@ -252,12 +252,14 @@ img {
 .highlight i {
     width: 36px;
     height: 36px;
+    flex: 0 0 36px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 0.95rem;
+    line-height: 1;
 }
 
 .hero-card {
@@ -490,7 +492,8 @@ section {
 .about-content h2 {
     font-size: 2.6rem;
     color: var(--primary-color);
-    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1;
 }
 
 .about-content p {
