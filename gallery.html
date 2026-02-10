@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View our portfolio of completed projects">
+    <title>Gallery - Nick Yard Services</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="index.html">
+                            <h2>Nick Yard Services</h2>
+                        </a>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html" class="active">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Gallery</h1>
+            <p>Explore our portfolio of completed projects</p>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section class="content-section" style="padding-bottom: 2rem;">
+        <div class="container">
+            <div class="gallery-filter" style="text-align: center; margin-bottom: 2rem;">
+                <button class="filter-btn active" data-filter="all" style="background: var(--secondary-color); color: white; border: none; padding: 0.75rem 1.5rem; margin: 0.5rem; border-radius: 5px; cursor: pointer; font-size: 1rem; transition: var(--transition);">All Projects</button>
+                <button class="filter-btn" data-filter="residential" style="background: transparent; color: var(--primary-color); border: 2px solid var(--border-color); padding: 0.75rem 1.5rem; margin: 0.5rem; border-radius: 5px; cursor: pointer; font-size: 1rem; transition: var(--transition);">Residential</button>
+                <button class="filter-btn" data-filter="commercial" style="background: transparent; color: var(--primary-color); border: 2px solid var(--border-color); padding: 0.75rem 1.5rem; margin: 0.5rem; border-radius: 5px; cursor: pointer; font-size: 1rem; transition: var(--transition);">Commercial</button>
+                <button class="filter-btn" data-filter="renovation" style="background: transparent; color: var(--primary-color); border: 2px solid var(--border-color); padding: 0.75rem 1.5rem; margin: 0.5rem; border-radius: 5px; cursor: pointer; font-size: 1rem; transition: var(--transition);">Renovations</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="content-section" style="padding-top: 0;">
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- Residential Projects -->
+                <div class="gallery-item" data-category="residential">
+                    <div class="image-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Residential Project 1</p>
+                    </div>
+                    <div class="gallery-info" style="padding: 1rem; text-align: center;">
+                        <h4 style="color: var(--primary-color);">Kitchen Remodel</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Modern kitchen transformation</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="residential">
+                    <div class="image-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Residential Project 2</p>
+                    </div>
+                    <div class="gallery-info" style="padding: 1rem; text-align: center;">
+                        <h4 style="color: var(--primary-color);">Bathroom Upgrade</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Luxurious bathroom renovation</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="residential">
+                    <div class="image-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Residential Project 3</p>
+                    </div>
+                    <div class="gallery-info" style="padding: 1rem; text-align: center;">
+                        <h4 style="color: var(--primary-color);">Deck Construction</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Custom outdoor living space</p>
+                    </div>
+                </div>
+
+                <!-- Commercial Projects -->
+                <div class="gallery-item" data-category="commercial">
+                    <div class="image-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Commercial Project 1</p>
+                    </div>
+                    <div class="gallery-info" style="padding: 1rem; text-align: center;">
+                        <h4 style="color: var(--primary-color);">Office Renovation</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Modern office space design</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="commercial">
+                    <div class="image-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Commercial Project 2</p>
+                    </div>
+                    <div class="gallery-info" style="padding: 1rem; text-align: center;">
+                        <h4 style="color: var(--primary-color);">Retail Store</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Complete store buildout</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="commercial">
+                    <div class="image-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Commercial Project 3</p>
+                    </div>
+                    <div class="gallery-info" style="padding: 1rem; text-align: center;">
+                        <h4 style="color: var(--primary-color);">Restaurant Interior</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Contemporary dining space</p>
+                    </div>
+                </div>
+
+                <!-- Renovation Projects -->
+                <div class="gallery-item" data-category="renovation">
+                    <div class="image-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Renovation Project 1</p>
+                    </div>
+                    <div class="gallery-info" style="padding: 1rem; text-align: center;">
+                        <h4 style="color: var(--primary-color);">Home Exterior</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Complete exterior makeover</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="renovation">
+                    <div class="image-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Renovation Project 2</p>
+                    </div>
+                    <div class="gallery-info" style="padding: 1rem; text-align: center;">
+                        <h4 style="color: var(--primary-color);">Basement Finishing</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Transformed basement space</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="renovation">
+                    <div class="image-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Renovation Project 3</p>
+                    </div>
+                    <div class="gallery-info" style="padding: 1rem; text-align: center;">
+                        <h4 style="color: var(--primary-color);">Attic Conversion</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">New living space created</p>
+                    </div>
+                </div>
+
+                <!-- More Projects -->
+                <div class="gallery-item" data-category="residential">
+                    <div class="image-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Residential Project 4</p>
+                    </div>
+                    <div class="gallery-info" style="padding: 1rem; text-align: center;">
+                        <h4 style="color: var(--primary-color);">Flooring Installation</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Hardwood floor installation</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="commercial">
+                    <div class="image-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Commercial Project 4</p>
+                    </div>
+                    <div class="gallery-info" style="padding: 1rem; text-align: center;">
+                        <h4 style="color: var(--primary-color);">Storefront Update</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Modern storefront design</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="renovation">
+                    <div class="image-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Renovation Project 4</p>
+                    </div>
+                    <div class="gallery-info" style="padding: 1rem; text-align: center;">
+                        <h4 style="color: var(--primary-color);">Historic Restoration</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Preserving historic charm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Achievements</h2>
+                <p>Numbers that speak for themselves</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>500+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>100%</h3>
+                    <p>Client Satisfaction</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>300+</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <h3>10+</h3>
+                    <p>Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Want to Be Our Next Success Story?</h2>
+                <p>Let's discuss your project and make it a reality</p>
+                <a href="contact.html" class="btn btn-light">Start Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Nick Yard Services</h3>
+                    <p>Providing quality services with professionalism and excellence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Residential</a></li>
+                        <li><a href="services.html">Commercial</a></li>
+                        <li><a href="services.html">Maintenance</a></li>
+                        <li><a href="services.html">Renovations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@nickyardservices.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Your City, State</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nick Yard Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Gallery filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => {
+                        b.style.background = 'transparent';
+                        b.style.color = 'var(--primary-color)';
+                        b.style.border = '2px solid var(--border-color)';
+                    });
+
+                    // Add active class to clicked button
+                    this.style.background = 'var(--secondary-color)';
+                    this.style.color = 'white';
+                    this.style.border = '2px solid var(--secondary-color)';
+
+                    const filter = this.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filter === 'all') {
+                            item.style.display = 'block';
+                        } else {
+                            if (item.getAttribute('data-category') === filter) {
+                                item.style.display = 'block';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
