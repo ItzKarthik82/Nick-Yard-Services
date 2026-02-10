@@ -755,6 +755,86 @@ section {
     background: var(--bg-light);
 }
 
+.section-title-centered {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+}
+
+.process-step-icon {
+    background: var(--accent-color) !important;
+}
+
+.gallery-item-title {
+    color: var(--primary-color);
+}
+
+.gallery-item-description {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.team-member-image {
+    height: 200px;
+    margin-bottom: 1rem;
+}
+
+.form-heading {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.btn-full-width {
+    width: 100%;
+}
+
+.form-success {
+    background: #27ae60;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.form-error {
+    background: var(--accent-color);
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    z-index: 999;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    background: var(--primary-color);
+}
+
+.back-to-top.show {
+    display: flex;
+}
+
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
     .hamburger {

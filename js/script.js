@@ -86,14 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const successMessage = document.createElement('div');
                 successMessage.className = 'form-success';
                 successMessage.textContent = 'Thank you! Your message has been sent successfully.';
-                successMessage.style.cssText = `
-                    background: #27ae60;
-                    color: white;
-                    padding: 1rem;
-                    border-radius: 5px;
-                    margin-top: 1rem;
-                    text-align: center;
-                `;
                 
                 form.appendChild(successMessage);
                 form.reset();
@@ -107,14 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (!errorMessage) {
                     errorMessage = document.createElement('div');
                     errorMessage.className = 'form-error';
-                    errorMessage.style.cssText = `
-                        background: #e74c3c;
-                        color: white;
-                        padding: 1rem;
-                        border-radius: 5px;
-                        margin-top: 1rem;
-                        text-align: center;
-                    `;
                     form.appendChild(errorMessage);
                 }
                 errorMessage.textContent = 'Please fill in all required fields correctly.';
@@ -154,32 +138,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const backToTop = document.createElement('button');
     backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
     backToTop.className = 'back-to-top';
-    backToTop.style.cssText = `
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background: #3498db;
-        color: white;
-        border: none;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
-        z-index: 999;
-    `;
     document.body.appendChild(backToTop);
 
     window.addEventListener('scroll', function() {
         if (window.pageYOffset > 300) {
-            backToTop.style.display = 'flex';
+            backToTop.classList.add('show');
         } else {
-            backToTop.style.display = 'none';
+            backToTop.classList.remove('show');
         }
     });
 
@@ -188,16 +153,6 @@ document.addEventListener('DOMContentLoaded', function() {
             top: 0,
             behavior: 'smooth'
         });
-    });
-
-    backToTop.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-5px)';
-        this.style.background = '#2c3e50';
-    });
-
-    backToTop.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-        this.style.background = '#3498db';
     });
 
     // Active navigation highlighting based on scroll position
