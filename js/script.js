@@ -226,8 +226,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     galleryItems.forEach(item => {
         item.addEventListener('click', function() {
-            // Placeholder for lightbox functionality
-            console.log('Gallery item clicked');
+            // Future enhancement: Implement lightbox functionality here
+            // Example: Open modal with full-size image
         });
     });
 });
