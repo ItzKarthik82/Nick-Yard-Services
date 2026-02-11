@@ -63,9 +63,8 @@ img {
 
 /* ===== Header & Navigation ===== */
 .header {
-    background: rgba(243, 247, 243, 0.92);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(20, 30, 24, 0.08);
+    background: #000000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -83,7 +82,7 @@ img {
 }
 
 .logo h2 {
-    color: var(--primary-color);
+    color: #ffffff;
     font-size: 1.7rem;
     font-weight: 700;
 }
@@ -96,7 +95,19 @@ img {
 }
 
 .logo a:hover h2 {
-    color: var(--secondary-color);
+    color: #ffffff;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 72px;
+    width: auto;
+    display: block;
+    object-fit: contain;
 }
 
 .nav-menu {
@@ -105,7 +116,7 @@ img {
 }
 
 .nav-menu a {
-    color: var(--text-dark);
+    color: #ffffff;
     font-weight: 500;
     padding: 0.5rem 0;
     position: relative;
@@ -132,7 +143,7 @@ img {
 
 .nav-menu a:hover,
 .nav-menu a.active {
-    color: var(--secondary-color);
+    color: #ffffff;
 }
 
 .nav-cta {
@@ -163,7 +174,7 @@ img {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: var(--primary-color);
+    background: #ffffff;
     transition: var(--transition);
 }
 
