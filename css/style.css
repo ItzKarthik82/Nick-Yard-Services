@@ -184,8 +184,8 @@ img {
     padding: 7rem 0 6rem;
     color: white;
     overflow: hidden;
-    background: radial-gradient(circle at top left, rgba(123, 191, 116, 0.3), transparent 60%),
-        linear-gradient(135deg, #14301f 0%, #0f2417 55%, #0b1c12 100%);
+    background: linear-gradient(120deg, rgba(10, 20, 14, 0.72), rgba(10, 20, 14, 0.35)),
+        url("../src/Home%20page%20image.jpeg") center/cover no-repeat;
 }
 
 .hero::before {
@@ -214,17 +214,25 @@ img {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-    gap: 3rem;
-    align-items: center;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: start;
 }
 
 .hero-copy {
     max-width: 600px;
+    grid-column: 2;
+    justify-self: end;
+    margin-left: 0;
+    border: none;
+    grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.4fr);
+    padding: 0;
+    align-items: center;
 }
 
 .hero-title {
     font-size: 3.4rem;
+    margin-left: auto;
     font-weight: 700;
     margin-bottom: 1.5rem;
     line-height: 1.05;
@@ -247,17 +255,21 @@ img {
 
 .hero-highlights {
     margin-top: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
 }
 
 .highlight {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.75rem;
     font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.85);
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(10, 20, 14, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .highlight i {
@@ -278,8 +290,11 @@ img {
     border-radius: var(--radius-lg);
     padding: 1.5rem;
     border: 1px solid rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(6px);
     animation: fadeInUp 1.1s ease;
+    max-width: 360px;
+    margin-left: 0;
+    grid-column: 2;
+    justify-self: end;
 }
 
 .hero-card-inner {
@@ -1189,6 +1204,15 @@ section {
 
     .hero-grid {
         grid-template-columns: 1fr;
+    }
+
+    .hero-copy {
+        max-width: none;
+        padding: 2rem;
+    }
+
+    .hero-card {
+        max-width: none;
     }
 
     .nav-menu.active {
