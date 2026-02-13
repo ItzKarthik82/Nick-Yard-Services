@@ -435,20 +435,20 @@ section {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
 .service-card {
     background: white;
-    padding: 2.5rem 2rem;
+    padding: 3rem 2.4rem;
     border-radius: var(--radius-lg);
     text-align: left;
     transition: var(--transition);
     box-shadow: var(--shadow-soft);
     border: 1px solid rgba(34, 34, 34, 0.05);
     display: grid;
-    gap: 1rem;
+    gap: 1.2rem;
 }
 
 .service-card:hover {
@@ -471,7 +471,7 @@ section {
 
 .before-after {
     position: relative;
-    height: 150px;
+    height: 175px;
     border-radius: 20px;
     overflow: hidden;
     background: rgba(63, 122, 74, 0.12);
