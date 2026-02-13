@@ -218,6 +218,9 @@ img {
     gap: 2.5rem;
     align-items: start;
 }
+.hero-mobile-image {
+    display: none;
+}
 
 .hero-copy {
     max-width: 600px;
@@ -1204,15 +1207,36 @@ section {
 
     .hero-grid {
         grid-template-columns: 1fr;
+        position: relative;
+        display: block;
     }
 
     .hero-copy {
         max-width: none;
-        padding: 2rem;
+        padding: 2.5rem 1.5rem 2.75rem;
+        background: #ffffff;
+        color: var(--text-dark);
+        position: relative;
+        z-index: 2;
     }
 
-    .hero-card {
-        max-width: none;
+    .hero {
+        padding: 0;
+        background: none;
+        position: relative;
+    }
+
+    .hero::before,
+    .hero::after {
+        display: none;
+    }
+
+    .hero-mobile-image {
+        display: block;
+        width: 100%;
+        height: 360px;
+        background: url("../src/Home%20page%20image.jpeg") center/cover no-repeat;
+        z-index: 1;
     }
 
     .nav-menu.active {
@@ -1261,7 +1285,7 @@ section {
 
 @media (max-width: 480px) {
     .hero {
-        padding: 5.5rem 0 4rem;
+        padding: 0;
     }
 
     .hero-title {
