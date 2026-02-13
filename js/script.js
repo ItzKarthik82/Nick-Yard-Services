@@ -134,6 +134,48 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 
+    // Before/after sliders
+    const beforeAfterSliders = document.querySelectorAll('.before-after');
+
+    beforeAfterSliders.forEach(slider => {
+        let isDragging = false;
+
+        const updateSliderPosition = event => {
+            const rect = slider.getBoundingClientRect();
+            const clampedX = Math.min(Math.max(event.clientX - rect.left, 0), rect.width);
+            const percent = (clampedX / rect.width) * 100;
+            slider.style.setProperty('--before-after-position', `${percent}%`);
+        };
+
+        slider.addEventListener('pointerdown', event => {
+            isDragging = true;
+            slider.classList.add('is-dragging');
+            slider.setPointerCapture(event.pointerId);
+            updateSliderPosition(event);
+        });
+
+        slider.addEventListener('pointermove', event => {
+            if (!isDragging) {
+                return;
+            }
+
+            updateSliderPosition(event);
+        });
+
+        const stopDragging = event => {
+            if (!isDragging) {
+                return;
+            }
+
+            isDragging = false;
+            slider.classList.remove('is-dragging');
+            slider.releasePointerCapture(event.pointerId);
+        };
+
+        slider.addEventListener('pointerup', stopDragging);
+        slider.addEventListener('pointercancel', stopDragging);
+    });
+
     // Back to top button
     const backToTop = document.createElement('button');
     backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';

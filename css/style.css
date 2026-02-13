@@ -469,6 +469,61 @@ section {
     color: var(--secondary-color);
 }
 
+.before-after {
+    position: relative;
+    height: 120px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(63, 122, 74, 0.12);
+    cursor: ew-resize;
+    touch-action: none;
+    --before-after-position: 50%;
+}
+
+.before-after-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.before-after-after {
+    position: absolute;
+    inset: 0;
+    width: var(--before-after-position);
+    overflow: hidden;
+}
+
+.before-after-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--before-after-position);
+    width: 2px;
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateX(-1px);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+}
+
+.before-after-handle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid rgba(20, 30, 24, 0.2);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.before-after.is-dragging .before-after-after,
+.before-after.is-dragging .before-after-handle {
+    animation: none;
+}
+
 .service-card h3 {
     font-size: 1.6rem;
     margin-bottom: 0.5rem;
