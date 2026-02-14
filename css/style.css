@@ -1563,6 +1563,15 @@ section {
 
     .about-wrapper {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .about-image {
+        order: -1;
+    }
+    
+    .image-placeholder {
+        height: 280px;
     }
 
     .contact-container {
@@ -1633,6 +1642,10 @@ section {
 
     section {
         padding: 4rem 0;
+    }
+    
+    .image-placeholder {
+        height: 220px;
     }
     
     .testimonial-card {
