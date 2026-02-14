@@ -633,6 +633,57 @@ section {
     gap: 1rem;
 }
 
+/* Service cards with images */
+.service-card:has(.service-image) {
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.service-image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.service-card:has(.service-image) h3 {
+    padding: 1.5rem 2.4rem 0 2.4rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.service-card:has(.service-image) p {
+    padding: 0 2.4rem;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.service-card:has(.service-image) .service-link {
+    padding: 0 2.4rem;
+    margin-bottom: 3rem;
+    display: inline-flex;
+    background: rgba(63, 122, 74, 0.1);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    margin-left: 2.4rem;
+    margin-right: 2.4rem;
+    transition: all 0.3s ease;
+}
+
+.service-card:has(.service-image) .service-link:hover {
+    background: var(--secondary-color);
+    color: white;
+    gap: 0.75rem;
+}
+
+.service-card:hover .service-image {
+    transform: scale(1.05);
+}
+
 /* ===== About Section ===== */
 .about-wrapper {
     display: grid;
@@ -1598,6 +1649,10 @@ section {
         grid-template-columns: 1fr;
     }
 
+    .service-image {
+        height: 200px;
+    }
+
     .gallery-grid {
         grid-template-columns: 1fr;
     }
@@ -1664,6 +1719,10 @@ section {
     .testimonial-card .before-after {
         margin: -1.5rem -1.5rem 1rem -1.5rem;
         height: 300px;
+    }
+
+    .service-image {
+        height: 180px;
     }
 
     .footer-grid {
