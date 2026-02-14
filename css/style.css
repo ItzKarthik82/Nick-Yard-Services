@@ -795,6 +795,11 @@ section {
     border: 1px solid rgba(34, 34, 34, 0.05);
 }
 
+.testimonial-card .before-after {
+    margin: -2.5rem -2.5rem 1.5rem -2.5rem;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
 .testimonial-rating {
     color: #91d186;
     margin-bottom: 1rem;
@@ -1384,6 +1389,15 @@ section {
         padding: 2rem 0;
         gap: 0;
     }
+    
+    .nav-menu a {
+        color: var(--text-dark);
+    }
+    
+    .nav-menu a:hover,
+    .nav-menu a.active {
+        color: var(--secondary-color);
+    }
 
     .nav-cta {
         display: none;
@@ -1569,6 +1583,15 @@ section {
     .gallery-grid {
         grid-template-columns: 1fr;
     }
+    
+    .testimonial-card {
+        padding: 2rem;
+    }
+    
+    .testimonial-card .before-after {
+        margin: -2rem -2rem 1.25rem -2rem;
+        height: 200px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1610,6 +1633,15 @@ section {
 
     section {
         padding: 4rem 0;
+    }
+    
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+    
+    .testimonial-card .before-after {
+        margin: -1.5rem -1.5rem 1rem -1.5rem;
+        height: 180px;
     }
 
     .footer-grid {
