@@ -94,6 +94,8 @@ img {
 @media (max-width: 768px) {
     .top-bar {
         font-size: 0.8rem;
+        position: fixed;
+        padding: 0.4rem 0;
     }
     
     .top-bar-content {
@@ -1391,9 +1393,13 @@ section {
 
     .hero-mobile {
         display: block;
-        padding: 82px 0 4.8rem;
+        padding: 117px 0 4.8rem;
         background: var(--bg-light);
         color: var(--text-dark);
+    }
+
+    .page-header {
+        padding-top: 7.5rem;
     }
 
     .hero-mobile .hero-title,
@@ -1508,7 +1514,7 @@ section {
 
     .header {
         position: fixed;
-        top: 0;
+        top: 35px;
         left: 0;
         right: 0;
         height: 82px;
@@ -1545,7 +1551,7 @@ section {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 82px;
+        top: 117px;
         flex-direction: column;
         background: rgba(243, 247, 243, 0.98);
         width: 100%;
@@ -1812,7 +1818,7 @@ section {
     }
 
     .hero-mobile {
-        padding: 82px 0 4rem;
+        padding: 117px 0 4rem;
     }
     
     .hero-mobile-card {
