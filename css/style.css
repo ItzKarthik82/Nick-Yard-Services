@@ -9,13 +9,13 @@
     --primary-color: #14301f;
     --secondary-color: #3f7a4a;
     --accent-color: #7bbf74;
-    --text-dark: #1b221b;
-    --text-light: #516153;
-    --bg-light: #f3f7f3;
-    --bg-white: #ffffff;
-    --border-color: #d8e2d8;
-    --shadow-soft: 0 20px 50px rgba(20, 30, 24, 0.08);
-    --shadow-strong: 0 16px 40px rgba(20, 30, 24, 0.18);
+    --text-dark: #e8e8e8;
+    --text-light: #b0b0b0;
+    --bg-light: #0a0a0a;
+    --bg-white: #121212;
+    --border-color: #2a2a2a;
+    --shadow-soft: 0 20px 50px rgba(0, 0, 0, 0.5);
+    --shadow-strong: 0 16px 40px rgba(0, 0, 0, 0.7);
     --radius-lg: 22px;
     --radius-md: 16px;
     --radius-sm: 10px;
@@ -501,17 +501,17 @@ img {
 }
 
 .btn-secondary:hover {
-    background: white;
-    color: var(--primary-color);
+    background: var(--bg-white);
+    color: var(--hero-accent);
 }
 
 .btn-light {
-    background: white;
-    color: var(--primary-color);
+    background: var(--bg-white);
+    color: var(--hero-accent);
 }
 
 .btn-light:hover {
-    background: #f1ebe2;
+    background: var(--border-color);
     transform: translateY(-2px);
 }
 
@@ -531,7 +531,7 @@ section {
 
 .section-header h2 {
     font-size: 2.8rem;
-    color: var(--primary-color);
+    color: var(--hero-accent);
     margin-bottom: 0.75rem;
 }
 
@@ -554,13 +554,13 @@ section {
 }
 
 .service-card {
-    background: white;
+    background: var(--bg-white);
     padding: 3rem 2.4rem;
     border-radius: var(--radius-lg);
     text-align: left;
     transition: var(--transition);
     box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(34, 34, 34, 0.05);
+    border: 1px solid var(--border-color);
     display: grid;
     gap: 1.2rem;
 }
@@ -589,8 +589,8 @@ section {
     border-radius: 20px;
     overflow: hidden;
     background: #1a1a1a;
-    border: 1px solid rgba(20, 30, 24, 0.1);
-    box-shadow: 0 16px 30px rgba(20, 30, 24, 0.12);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.5);
     cursor: ew-resize;
     touch-action: none;
     --before-after-position: 50%;
@@ -702,7 +702,7 @@ section {
 }
 
 .before-after:hover .before-after-handle::before {
-    color: var(--primary-color);
+    color: var(--hero-accent);
     letter-spacing: 5px;
 }
 
@@ -714,7 +714,7 @@ section {
 .service-card h3 {
     font-size: 1.6rem;
     margin-bottom: 0.5rem;
-    color: var(--primary-color);
+    color: var(--hero-accent);
 }
 
 .service-card p {
@@ -723,7 +723,7 @@ section {
 }
 
 .service-link {
-    color: var(--secondary-color);
+    color: var(--hero-accent);
     font-weight: 600;
     display: inline-flex;
     align-items: center;
@@ -732,6 +732,7 @@ section {
 
 .service-link:hover {
     gap: 1rem;
+    color: #8fff97;
 }
 
 /* Service cards with images */
@@ -768,7 +769,7 @@ section {
     padding: 0 2.4rem;
     margin-bottom: 3rem;
     display: inline-flex;
-    background: rgba(63, 122, 74, 0.1);
+    background: rgba(111, 219, 119, 0.15);
     padding: 0.6rem 1.2rem;
     border-radius: 8px;
     margin-left: 2.4rem;
@@ -777,8 +778,8 @@ section {
 }
 
 .service-card:has(.service-image) .service-link:hover {
-    background: var(--secondary-color);
-    color: white;
+    background: var(--hero-accent);
+    color: #000000;
     gap: 0.75rem;
 }
 
@@ -801,7 +802,7 @@ section {
 
 .about-content h2 {
     font-size: 2.8rem;
-    color: var(--primary-color);
+    color: var(--hero-accent);
     line-height: 1.1;
 }
 
@@ -836,14 +837,14 @@ section {
 .image-placeholder {
     width: 100%;
     height: 420px;
-    background: linear-gradient(135deg, rgba(63, 122, 74, 0.12), rgba(123, 191, 116, 0.2));
+    background: linear-gradient(135deg, rgba(63, 122, 74, 0.15), rgba(123, 191, 116, 0.1));
     border-radius: var(--radius-lg);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: var(--text-light);
-    border: 1px solid rgba(20, 30, 24, 0.1);
+    border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
 }
@@ -869,7 +870,7 @@ section {
     position: absolute;
     inset: 18px;
     border-radius: calc(var(--radius-lg) - 10px);
-    border: 1px dashed rgba(20, 30, 24, 0.15);
+    border: 1px dashed rgba(255, 255, 255, 0.15);
 }
 
 .image-placeholder i {
@@ -899,8 +900,8 @@ section {
     text-align: left;
     padding: 2rem;
     border-radius: var(--radius-md);
-    background: white;
-    border: 1px solid rgba(20, 30, 24, 0.08);
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
     box-shadow: var(--shadow-soft);
 }
 
@@ -921,7 +922,7 @@ section {
 .feature-item h3 {
     font-size: 1.4rem;
     margin-bottom: 0.75rem;
-    color: var(--primary-color);
+    color: var(--hero-accent);
 }
 
 .feature-item p {
@@ -955,11 +956,11 @@ section {
 }
 
 .testimonial-card {
-    background: white;
+    background: var(--bg-white);
     padding: 2.5rem;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(34, 34, 34, 0.05);
+    border: 1px solid var(--border-color);
 }
 
 .testimonial-card .before-after {
@@ -981,7 +982,7 @@ section {
 }
 
 .testimonial-author h4 {
-    color: var(--primary-color);
+    color: var(--hero-accent);
     margin-bottom: 0.25rem;
 }
 
@@ -1147,7 +1148,7 @@ section {
 
 .filter-btn {
     background: transparent;
-    color: var(--primary-color);
+    color: var(--hero-accent);
     border: 1px solid var(--border-color);
     padding: 0.75rem 1.6rem;
     margin: 0.5rem;
@@ -1184,7 +1185,7 @@ section {
 }
 
 .contact-form {
-    background: white;
+    background: var(--bg-white);
     padding: 2.5rem;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-soft);
@@ -1211,6 +1212,8 @@ section {
     font-family: inherit;
     font-size: 1rem;
     transition: var(--transition);
+    background: var(--bg-light);
+    color: var(--text-dark);
 }
 
 .form-group input:focus,
@@ -1232,7 +1235,7 @@ section {
 }
 
 .contact-info-section h3 {
-    color: var(--primary-color);
+    color: var(--hero-accent);
     margin-bottom: 1.5rem;
 }
 
@@ -1250,7 +1253,7 @@ section {
 }
 
 .contact-detail-text h4 {
-    color: var(--primary-color);
+    color: var(--hero-accent);
     margin-bottom: 0.25rem;
 }
 
@@ -1267,14 +1270,14 @@ section {
 }
 
 .service-detail-card {
-    background: white;
+    background: var(--bg-white);
     padding: 2.25rem;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-soft);
 }
 
 .service-detail-card h3 {
-    color: var(--primary-color);
+    color: var(--hero-accent);
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
@@ -1303,7 +1306,7 @@ section {
 
 .section-title-centered {
     text-align: center;
-    color: var(--primary-color);
+    color: var(--hero-accent);
     margin-bottom: 3rem;
 }
 
@@ -1312,7 +1315,7 @@ section {
 }
 
 .gallery-item-title {
-    color: var(--primary-color);
+    color: var(--hero-accent);
 }
 
 .gallery-item-description {
@@ -1326,7 +1329,7 @@ section {
 }
 
 .form-heading {
-    color: var(--primary-color);
+    color: var(--hero-accent);
     margin-bottom: 1.5rem;
 }
 
@@ -1453,10 +1456,10 @@ section {
     }
 
     .hero-mobile-card {
-        background: #ffffff;
-        border: 1px solid rgba(20, 30, 24, 0.1);
+        background: var(--bg-white);
+        border: 1px solid var(--border-color);
         border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(20, 30, 24, 0.15);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         padding: 2rem 1.75rem 2.25rem;
         text-align: center;
         display: flex;
@@ -1604,10 +1607,10 @@ section {
         margin: 0 auto;
         text-align: center;
         align-items: center;
-        background: #ffffff;
-        border: 1px solid rgba(20, 30, 24, 0.12);
+        background: var(--bg-white);
+        border: 1px solid var(--border-color);
         border-radius: 18px;
-        box-shadow: 0 18px 36px rgba(20, 30, 24, 0.2);
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.5);
     }
 
     .hero-copy .eyebrow {
@@ -1721,8 +1724,8 @@ section {
 
     .hero-mobile .btn-secondary {
         background: transparent;
-        color: var(--primary-color);
-        border: 1px solid var(--primary-color);
+        color: var(--hero-accent);
+        border: 1px solid var(--hero-accent);
     }
     
     .hero-mobile .btn-secondary:hover {
