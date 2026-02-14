@@ -62,12 +62,56 @@ img {
     display: block;
 }
 
+/* ===== Top Info Bar ===== */
+.top-bar {
+    background: var(--primary-color);
+    color: #ffffff;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.top-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.top-bar-item i {
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        font-size: 0.8rem;
+    }
+    
+    .top-bar-content {
+        gap: 1rem;
+        justify-content: center;
+    }
+    
+    .top-bar-item span {
+        font-size: 0.8rem;
+    }
+}
+
 /* ===== Header & Navigation ===== */
 .header {
     background: #000000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     position: sticky;
-    top: 0;
+    top: 40px;
     z-index: 1000;
 }
 
