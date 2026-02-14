@@ -1355,6 +1355,20 @@ section {
     text-align: center;
 }
 
+/* Service Area Grid */
+.service-area-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .service-area-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -1556,13 +1570,14 @@ section {
         left: -100%;
         top: 117px;
         flex-direction: column;
-        background: rgba(243, 247, 243, 0.98);
+        background: rgba(18, 18, 18, 0.98);
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.8);
         padding: 2rem 0;
         gap: 0;
+        border-top: 1px solid var(--border-color);
     }
     
     .nav-menu a {
@@ -1571,7 +1586,7 @@ section {
     
     .nav-menu a:hover,
     .nav-menu a.active {
-        color: var(--secondary-color);
+        color: var(--hero-accent);
     }
 
     .nav-cta {
