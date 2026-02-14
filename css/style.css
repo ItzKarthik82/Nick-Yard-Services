@@ -451,24 +451,6 @@ img {
     display: none;
 }
 
-.hero-cta {
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-weight: 700;
-}
-
-.hero-cta-outline {
-    background: transparent;
-    color: #ffffff;
-    border: 2px solid var(--hero-accent);
-}
-
-.hero-cta-solid {
-    background: var(--hero-accent);
-    color: #ffffff;
-    border: 2px solid var(--hero-accent);
-}
-
 /* ===== Sections ===== */
 section {
     padding: 6rem 0;
@@ -1303,8 +1285,13 @@ section {
         text-align: center;
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1.25rem;
         align-items: center;
+    }
+
+    .hero-mobile .eyebrow {
+        color: var(--accent-color);
+        margin-bottom: 0;
     }
 
     .hero-mobile .hero-subtitle {
@@ -1315,13 +1302,37 @@ section {
         color: var(--text-light);
     }
 
-    .hero-actions {
+    .hero-mobile .hero-buttons {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: stretch;
         gap: 1rem;
+        margin-top: 0.25rem;
+    }
+    
+    .hero-mobile .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-mobile .hero-highlights {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
         margin-top: 0.5rem;
+    }
+    
+    .hero-mobile .highlight {
+        background: rgba(111, 219, 119, 0.08);
+        border-color: rgba(111, 219, 119, 0.25);
+        color: var(--text-dark);
+        justify-content: center;
+    }
+    
+    .hero-mobile .highlight i {
+        background: rgba(111, 219, 119, 0.15);
+        color: var(--secondary-color);
     }
 
     .header {
@@ -1344,7 +1355,7 @@ section {
     }
 
     .logo-img {
-        height: 38px;
+        height: 60px;
     }
 
     .hamburger {
@@ -1521,29 +1532,15 @@ section {
         color: var(--text-light);
     }
 
-    .hero-cta {
-        width: 100%;
-        height: 56px;
-        border-radius: 12px;
-        justify-content: center;
-        font-size: 0.9rem;
-    }
-
-    .hero-cta-outline {
-        color: var(--primary-color);
-        border-color: var(--primary-color);
+    .hero-mobile .btn-secondary {
         background: transparent;
+        color: var(--primary-color);
+        border: 1px solid var(--primary-color);
     }
     
-    .hero-cta-outline:hover {
+    .hero-mobile .btn-secondary:hover {
         background: var(--primary-color);
-        color: #ffffff;
-    }
-    
-    .hero-cta-solid {
-        background: var(--hero-accent);
-        color: var(--text-dark);
-        border-color: var(--hero-accent);
+        color: white;
     }
 
     .section-header h2 {
