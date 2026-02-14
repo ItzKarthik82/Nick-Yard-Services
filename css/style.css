@@ -104,6 +104,21 @@ img {
     object-fit: cover;
 }
 
+.before-after-image.image20-fill,
+.before-after-image.image21-fill {
+    object-fit: cover;
+    object-position: center center;
+    width: 110%;
+    height: 110%;
+    min-width: 110%;
+    min-height: 110%;
+    transform: scale(1.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -525,7 +540,7 @@ section {
     height: 400px;
     border-radius: 20px;
     overflow: hidden;
-    background: rgba(63, 122, 74, 0.12);
+    background: #1a1a1a;
     border: 1px solid rgba(20, 30, 24, 0.1);
     box-shadow: 0 16px 30px rgba(20, 30, 24, 0.12);
     cursor: ew-resize;
@@ -585,10 +600,10 @@ section {
     top: 0;
     bottom: 0;
     left: var(--before-after-position);
-    width: 2px;
-    background: rgba(255, 255, 255, 0.95);
-    transform: translateX(-1px);
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+    width: 3px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.3));
+    transform: translateX(-1.5px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .before-after-handle::after {
@@ -596,13 +611,51 @@ section {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: #ffffff;
-    border: 1px solid rgba(20, 30, 24, 0.25);
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.8);
     transform: translate(-50%, -50%);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.15),
+        0 0 0 4px rgba(63, 122, 74, 0.2),
+        inset 0 2px 4px rgba(255, 255, 255, 0.9),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.before-after:hover .before-after-handle::after {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.2),
+        0 0 0 4px rgba(63, 122, 74, 0.4),
+        0 0 0 8px rgba(63, 122, 74, 0.1),
+        inset 0 2px 4px rgba(255, 255, 255, 1),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.08);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.before-after-handle::before {
+    content: '‹   ›';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--secondary-color);
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    z-index: 1;
+    pointer-events: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.before-after:hover .before-after-handle::before {
+    color: var(--primary-color);
+    letter-spacing: 5px;
 }
 
 .before-after.is-dragging .before-after-after,
