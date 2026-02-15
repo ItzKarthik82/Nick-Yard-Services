@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             formStatus.textContent = 'Sending...';
             formStatus.style.color = '#333';
             const formData = new URLSearchParams(new FormData(contactForm)).toString();
-            fetch('https://script.google.com/macros/s/AKfycby1K0rnEcs0H-7HbkzsiCVvvw3-FbYdTQVyiDB2vhkBL7CTAZDEMHfugu5T6vbkCxOm/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbwUDkXP2r4njNaTKTjtdcprmGj9CeMb-iYlmd7Jpv1a34q27pc-UWyWoQwdiTQAEHw3/exec', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: formData
