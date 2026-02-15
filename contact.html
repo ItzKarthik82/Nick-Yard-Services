@@ -104,6 +104,7 @@
                             <label for="message">Message *</label>
                             <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
                         </div>
+                        <div id="formStatus" style="margin-bottom:1em;"></div>
                         <button type="submit" class="btn btn-primary btn-full-width">Send Message</button>
                     </form>
                 </div>
@@ -305,4 +306,32 @@
         </script>
         <script src="js/script.js?v=2"></script>
 </body>
+</body>
+<script>
+// Contact form AJAX submission
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        formStatus.textContent = 'Sending...';
+        formStatus.style.color = '#333';
+        const formData = new FormData(contactForm);
+        fetch('https://script.google.com/macros/s/AKfycbzRGd44db3mvAZA9fOaofRtdJ5vt3_IfXnDyERmtE2yOFJI-Faydd2YnabzWJGz7P9s/exec', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.ok ? response.json() : Promise.reject(response))
+        .then(data => {
+            formStatus.textContent = 'Thank you! Your message has been sent.';
+            formStatus.style.color = 'green';
+            contactForm.reset();
+        })
+        .catch(error => {
+            formStatus.textContent = 'Sorry, there was an error sending your message. Please try again later.';
+            formStatus.style.color = 'red';
+        });
+    });
+}
+</script>
 </html>
