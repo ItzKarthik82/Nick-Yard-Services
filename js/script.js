@@ -1,4 +1,4 @@
-// Contact form AJAX submission (moved from contact.html)
+// Contact form AJAX submission (URL-encoded for Google Apps Script)
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     const formStatus = document.getElementById('formStatus');
@@ -7,14 +7,14 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             formStatus.textContent = 'Sending...';
             formStatus.style.color = '#333';
-            const formData = new FormData(contactForm);
-            fetch('https://script.google.com/macros/s/AKfycbzQyPk9Toz0t7c4uB0w6y1xsl2ITNgNfz9ZgZwyl_n1kU48M4Tl6_c7EM2dC6Mnzdia/exec', {
+            const formData = new URLSearchParams(new FormData(contactForm)).toString();
+            fetch('https://script.google.com/macros/s/AKfycby1K0rnEcs0H-7HbkzsiCVvvw3-FbYdTQVyiDB2vhkBL7CTAZDEMHfugu5T6vbkCxOm/exec', {
                 method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: formData
             })
             .then(async response => {
                 if (response.ok) {
-                    // Try to parse JSON, fallback to text
                     let msg = 'Thank you! Your message has been sent.';
                     try {
                         const data = await response.json();
@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
                             msg = 'Thank you! Your message was received.';
                         }
                     } catch (e) {
-                        // Not JSON, fallback to text
                         msg = 'Thank you! Your message has been sent.';
                     }
                     formStatus.textContent = msg;
