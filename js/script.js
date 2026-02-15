@@ -1,3 +1,46 @@
+// Contact form AJAX submission (moved from contact.html)
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    if (contactForm && formStatus) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            formStatus.textContent = 'Sending...';
+            formStatus.style.color = '#333';
+            const formData = new FormData(contactForm);
+            fetch('https://script.google.com/macros/s/AKfycbzQyPk9Toz0t7c4uB0w6y1xsl2ITNgNfz9ZgZwyl_n1kU48M4Tl6_c7EM2dC6Mnzdia/exec', {
+                method: 'POST',
+                body: formData
+            })
+            .then(async response => {
+                if (response.ok) {
+                    // Try to parse JSON, fallback to text
+                    let msg = 'Thank you! Your message has been sent.';
+                    try {
+                        const data = await response.json();
+                        if (data && data.result === 'success') {
+                            msg = 'Thank you! Your message has been sent.';
+                        } else {
+                            msg = 'Thank you! Your message was received.';
+                        }
+                    } catch (e) {
+                        // Not JSON, fallback to text
+                        msg = 'Thank you! Your message has been sent.';
+                    }
+                    formStatus.textContent = msg;
+                    formStatus.style.color = 'green';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
+                formStatus.textContent = 'Sorry, there was an error sending your message. Please try again later.';
+                formStatus.style.color = 'red';
+            });
+        });
+    }
+});
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');

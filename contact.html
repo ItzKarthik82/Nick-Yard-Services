@@ -293,45 +293,9 @@
     </footer>
 
     <script src="js/script.js"></script>
-        <script>
-            // Debug: confirm script loaded
-            const scriptLoadedDiv = document.createElement('div');
-            scriptLoadedDiv.style.background = '#e0ffe0';
-            scriptLoadedDiv.style.color = '#070';
-            scriptLoadedDiv.style.padding = '1em';
-            scriptLoadedDiv.style.margin = '1em 0';
-            scriptLoadedDiv.textContent = 'Debug: script.js loaded.';
-            document.body.prepend(scriptLoadedDiv);
-            setTimeout(() => scriptLoadedDiv.remove(), 3000);
-        </script>
+        
         <script src="js/script.js?v=2"></script>
 </body>
 </body>
-<script>
-// Contact form AJAX submission
-const contactForm = document.getElementById('contactForm');
-const formStatus = document.getElementById('formStatus');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        formStatus.textContent = 'Sending...';
-        formStatus.style.color = '#333';
-        const formData = new FormData(contactForm);
-        fetch('https://script.google.com/macros/s/AKfycbzRGd44db3mvAZA9fOaofRtdJ5vt3_IfXnDyERmtE2yOFJI-Faydd2YnabzWJGz7P9s/exec', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.ok ? response.json() : Promise.reject(response))
-        .then(data => {
-            formStatus.textContent = 'Thank you! Your message has been sent.';
-            formStatus.style.color = 'green';
-            contactForm.reset();
-        })
-        .catch(error => {
-            formStatus.textContent = 'Sorry, there was an error sending your message. Please try again later.';
-            formStatus.style.color = 'red';
-        });
-    });
-}
 </script>
 </html>
