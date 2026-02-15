@@ -292,5 +292,17 @@
     </footer>
 
     <script src="js/script.js"></script>
+        <script>
+            // Debug: confirm script loaded
+            const scriptLoadedDiv = document.createElement('div');
+            scriptLoadedDiv.style.background = '#e0ffe0';
+            scriptLoadedDiv.style.color = '#070';
+            scriptLoadedDiv.style.padding = '1em';
+            scriptLoadedDiv.style.margin = '1em 0';
+            scriptLoadedDiv.textContent = 'Debug: script.js loaded.';
+            document.body.prepend(scriptLoadedDiv);
+            setTimeout(() => scriptLoadedDiv.remove(), 3000);
+        </script>
+        <script src="js/script.js?v=2"></script>
 </body>
 </html>
