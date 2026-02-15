@@ -43,15 +43,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Form validation
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
+    // Contact form submission to Google Apps Script
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
+            // Simple validation (reuse your existing logic)
             let isValid = true;
-            const requiredFields = form.querySelectorAll('[required]');
-            
+            const requiredFields = contactForm.querySelectorAll('[required]');
             requiredFields.forEach(field => {
                 if (!field.value.trim()) {
                     isValid = false;
@@ -62,40 +62,76 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             // Email validation
-            const emailFields = form.querySelectorAll('input[type="email"]');
-            emailFields.forEach(field => {
+            const emailField = contactForm.querySelector('input[type="email"]');
+            if (emailField) {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (field.value && !emailRegex.test(field.value)) {
+                if (emailField.value && !emailRegex.test(emailField.value)) {
                     isValid = false;
-                    field.style.borderColor = '#e74c3c';
+                    emailField.style.borderColor = '#e74c3c';
                 }
-            });
+            }
 
             // Phone validation
-            const phoneFields = form.querySelectorAll('input[type="tel"]');
-            phoneFields.forEach(field => {
+            const phoneField = contactForm.querySelector('input[type="tel"]');
+            if (phoneField) {
                 const phoneRegex = /^[\d\s\-\+\(\)]+$/;
-                if (field.value && !phoneRegex.test(field.value)) {
+                if (phoneField.value && !phoneRegex.test(phoneField.value)) {
                     isValid = false;
-                    field.style.borderColor = '#e74c3c';
+                    phoneField.style.borderColor = '#e74c3c';
                 }
-            });
+            }
+
+            // Remove previous messages
+            let prevSuccess = contactForm.querySelector('.form-success');
+            if (prevSuccess) prevSuccess.remove();
+            let prevError = contactForm.querySelector('.form-error');
+            if (prevError) prevError.remove();
 
             if (isValid) {
-                // Show success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'form-success';
-                successMessage.textContent = 'Thank you! Your message has been sent successfully.';
-                
-                form.appendChild(successMessage);
-                form.reset();
+                // Prepare data
+                const formData = {
+                    name: contactForm.name.value,
+                    email: contactForm.email.value,
+                    phone: contactForm.phone.value,
+                    service: contactForm.service.value,
+                    message: contactForm.message.value
+                };
 
-                setTimeout(() => {
-                    successMessage.remove();
-                }, 5000);
+                // Send to Google Apps Script
+                fetch('https://script.google.com/macros/s/AKfycbwyKjTsDtfxA1Ir1e0vf6K7im-ZWVNUb_IesLhsiOw0lw-3hXg9W43IRfUpcwKbcxWG/exec', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.result === 'success') {
+                        const successMessage = document.createElement('div');
+                        successMessage.className = 'form-success';
+                        successMessage.textContent = 'Thank you! Your message has been sent successfully.';
+                        contactForm.appendChild(successMessage);
+                        contactForm.reset();
+                        setTimeout(() => {
+                            successMessage.remove();
+                        }, 5000);
+                    } else {
+                        throw new Error('Submission failed');
+                    }
+                })
+                .catch(() => {
+                    let errorMessage = contactForm.querySelector('.form-error');
+                    if (!errorMessage) {
+                        errorMessage = document.createElement('div');
+                        errorMessage.className = 'form-error';
+                        errorMessage.textContent = 'There was an error sending your message. Please try again later.';
+                        contactForm.appendChild(errorMessage);
+                    }
+                });
             } else {
                 // Show error message
-                let errorMessage = form.querySelector('.form-error');
+                let errorMessage = contactForm.querySelector('.form-error');
                 if (!errorMessage) {
                     errorMessage = document.createElement('div');
                     errorMessage.className = 'form-error';
